@@ -30,20 +30,6 @@ public class MYElements {
 			Assert.fail();
 		}
 	}
-
-	public boolean waitForElementOnPageLoad(By by) {
-
-		try
-		{
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
-		}
-		catch (TimeoutException te)
-		{
-			_so.extentTest.error("TimeoutException caught while waiting for element " + by.toString() + " on page load", MYReporting.getScreenshot(_so.driver));
-			return false;
-		}
-		return true;
-	}
 	
 	public boolean waitForElementToBeVisible(By by) {
 		
@@ -53,19 +39,6 @@ public class MYElements {
 		catch (TimeoutException te)
 		{
 			_so.extentTest.error("TimeoutException caught while waiting for element " + by.toString() + " to be visible", MYReporting.getScreenshot(_so.driver));
-			return false;
-		}
-		return true;
-	}
-	
-	public boolean waitForElementToDisappear (By by) {
-				
-		try {
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.invisibilityOfElementLocated(by));
-		}
-		catch (TimeoutException te)
-		{
-			_so.extentTest.error("TimeoutException caught while waiting for element " + by.toString() + " to disappear", MYReporting.getScreenshot(_so.driver));
 			return false;
 		}
 		return true;
@@ -152,73 +125,6 @@ public class MYElements {
 			element.sendKeys(textToSend);
 		}
 	}
-
-	public void sendKeys(By by, Keys keysToSend) {
-				
-		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
-
-		try {
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
-			_so.driver.findElement(by).sendKeys(keysToSend);
-		}
-		catch (TimeoutException | NoSuchElementException ex) {
-			_so.extentTest.error("Error in sendKeys(): Element " + by.toString() + " could not be found", MYReporting.getScreenshot(_so.driver));
-			Assert.fail();
-		}
-	}
-	
-	public void awkwardClick(By by) {
-				
-		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
-		
-		try {
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
-			
-			WebElement element = _so.driver.findElement(by);
-			
-			((JavascriptExecutor) _so.driver).executeScript("arguments[0].scrollIntoView(true);", element);
-			((JavascriptExecutor) _so.driver).executeScript("arguments[0].click();", element);
-		}
-		catch (TimeoutException | NoSuchElementException ex) {
-			_so.extentTest.error("Error in awkwardClick(): Element " + by.toString() + " could not be found", MYReporting.getScreenshot(_so.driver));
-			Assert.fail();
-		}
-	}
-	
-	public void sendResourceToUpload(By by, String pathToFile) {
-				
-		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
-			
-		File fileToUpload = new File(System.getProperty("user.dir") + pathToFile);
-
-		try {
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.presenceOfElementLocated(by));
-			_so.driver.findElement(by).sendKeys(fileToUpload.getAbsolutePath());
-		}
-		catch (TimeoutException | NoSuchElementException ex) {
-			_so.extentTest.error("Error in sendResourceToUpload(): Element " + by.toString() + " could not be found", MYReporting.getScreenshot(_so.driver));
-			Assert.fail();
-		}
-		catch (WebDriverException wde) {
-			_so.extentTest.error("Error in sendResourceToUpload(): " + wde.getMessage());
-			Assert.fail();
-		}
-	}
-
-	public WebElement getElement(By by) {
-
-		try {
-			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));			
-		}
-		catch (TimeoutException | NoSuchElementException ex) {
-			_so.extentTest.error("Error in getElement(): Element " + by.toString() + " could not be found", MYReporting.getScreenshot(_so.driver));
-			Assert.fail();
-		}
-		return _so.driver.findElement(by);
-	}
 	
 	public boolean checkElementIsVisible(By by) {
 		
@@ -249,18 +155,6 @@ public class MYElements {
 		catch (TimeoutException | NoSuchElementException ex) {
 			// modal is not visible, proceed!
 		}
-	}
-	
-	public void switchToNewTabAndCloseIt() {
-		
-		// implementation assumes the newly opened tab is the second tab,
-		// where the main page is on the first tab
-		// this should hold true for most tests, but it isn't foolproof
-		
-		ArrayList<String> tabs = new ArrayList<String>(_so.driver.getWindowHandles());
-		_so.driver.switchTo().window(tabs.get(1));
-		_so.driver.close();
-		_so.driver.switchTo().window(tabs.get(0));
 	}
 	
 	public void uglyWaitThatShouldBeAvoided(long durationInMilliSeconds) {

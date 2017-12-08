@@ -24,40 +24,4 @@ public class MYAssert {
 			throw new AssertionError(reportingMessage);
 		}		
 	}
-	
-	public void assertFalse(boolean valueToAssert, String reportingMessage) {
-		
-		try {
-			Assert.assertFalse(valueToAssert);
-			_so.extentTest.pass(reportingMessage);
-		}
-		catch (AssertionError ae) {
-			_so.extentTest.fail("AssertFalse failed when evaluating check '" + reportingMessage + "'", MYReporting.getScreenshot(_so.driver));
-			throw new AssertionError(reportingMessage);
-		}		
-	}
-	
-	public void assertEquals(String expectedValue, String actualValue, String reportingMessage) {
-		
-		try {
-			Assert.assertEquals(expectedValue, actualValue);
-			_so.extentTest.pass(reportingMessage);
-		}
-		catch (AssertionError ae) {
-			_so.extentTest.fail("AssertEquals failed when evaluating check '" + reportingMessage + "', actual value was '" + actualValue + "', where '" + expectedValue + "' was expected", MYReporting.getScreenshot(_so.driver));
-			throw new AssertionError(reportingMessage);
-		}		
-	}
-	
-	public void assertEquals(long expectedValue, long actualValue, String reportingMessage) {
-		
-		try {
-			Assert.assertEquals(expectedValue, actualValue);
-			_so.extentTest.pass(reportingMessage);
-		}
-		catch (AssertionError ae) {
-			_so.extentTest.fail("AssertEquals failed when evaluating check '" + reportingMessage + "', actual value was " + actualValue + ", where " + expectedValue + " was expected", MYReporting.getScreenshot(_so.driver));
-			throw new AssertionError(reportingMessage);
-		}		
-	}
 }

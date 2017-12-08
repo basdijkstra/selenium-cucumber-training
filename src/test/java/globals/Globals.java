@@ -7,10 +7,6 @@ public class Globals {
 	public static final int DEFAULT_TIMEOUT = 30;
 	public static final int MODAL_TIMEOUT = 5;
 	
-	public static final String USERNAME_PREFIX = "at";
-	public static final String DEFAULT_EMAIL_DOMAIN = "@gmail.com";
-	public static final String DEFAULT_PASSWORD = "Test1234";
-	
 	public static final String EXTENTREPORTS_FOLDER = "target/extentreports/";
 	public static final String EXTENTREPORTS_IMAGES_FOLDER = "images/";
 
