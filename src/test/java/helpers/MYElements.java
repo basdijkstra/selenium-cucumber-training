@@ -47,7 +47,7 @@ public class MYElements {
 	public void click(By by) {
 		
 		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
+		//uglyWaitThatShouldBeAvoided(1000);
 		
 		try {
 			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
@@ -87,7 +87,7 @@ public class MYElements {
 	public void select(By by, String valueToBeSelected) {
 				
 		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
+		//uglyWaitThatShouldBeAvoided(1000);
 
 		try {
 			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
@@ -102,7 +102,7 @@ public class MYElements {
 	public void sendKeys(By by, String textToSend) {
 		
 		checkPendingRequests("sendKeys", new EventFiringWebDriver(_so.driver));
-		uglyWaitThatShouldBeAvoided(1000);
+		//uglyWaitThatShouldBeAvoided(1000);
 
 		try {
 			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
