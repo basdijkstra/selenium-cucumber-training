@@ -193,4 +193,9 @@ public class MortgageOrientationNLSteps extends SharedObjects {
 		
 		myAssert.assertTrue(new MortgageOrientationResultPage(_so).mortgagePossibleTextIsVisibleJoint(), applicantName + " and " + partnerApplicantName + " are eligible for a mortgage under their current financial situation");
 	}
+
+	@Then("^he is able to select a fixed interest period$")
+	public void test() throws Throwable {
+
+	}
 }

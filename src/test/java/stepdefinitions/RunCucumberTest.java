@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "classpath:features",
 		plugin = {"pretty", "json:target/cucumber-json-report/cucumber-json-report.json"},
-		tags = {"~@ignore"}
+		tags = {"~@ignore","@api"}
 		)
 
 public class RunCucumberTest{
@@ -42,7 +42,7 @@ public class RunCucumberTest{
 		
 		htmlReporter = new ExtentHtmlReporter(Globals.EXTENTREPORTS_FOLDER + "myreport.html");
 		
-		extentReports.attachReporter(htmlReporter);		
+		extentReports.attachReporter(htmlReporter);
 	}
 	
 	@AfterClass

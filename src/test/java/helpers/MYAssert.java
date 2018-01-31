@@ -24,4 +24,16 @@ public class MYAssert {
 			throw new AssertionError(reportingMessage);
 		}		
 	}
+
+	public void assertFalse(boolean valueToAssert, String reportingMessage) {
+
+		try {
+			Assert.assertFalse(valueToAssert);
+			_so.extentTest.pass(reportingMessage, MYReporting.getScreenshot(_so.driver));
+		}
+		catch (AssertionError ae) {
+			_so.extentTest.fail("AssertFalse failed when evaluating check '" + reportingMessage + "'", MYReporting.getScreenshot(_so.driver));
+			throw new AssertionError(reportingMessage);
+		}
+	}
 }
