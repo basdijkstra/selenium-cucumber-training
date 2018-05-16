@@ -12,8 +12,8 @@ public class MortgageOrientationStartPage {
 	private SharedObjects _so;
 	private MYElements myElements;
 	
-	private By textLabelApplicationAlone = By.id("application_0");
-	private By textLabelApplicationTogether = By.id("application_1");
+	private By textLabelApplicationAlone = By.id("application0");
+	private By textLabelApplicationTogether = By.id("application1");
 	private By dropdownContractType = By.id("employmentType");
 	private By textFieldGrossIncome = By.id("grossIncome");
 	private By dropdownContractTypePartner = By.id("partnerEmploymentType");

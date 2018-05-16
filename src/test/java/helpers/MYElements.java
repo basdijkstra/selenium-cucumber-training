@@ -92,7 +92,6 @@ public class MYElements {
 		try {
 			new WebDriverWait(_so.driver, Globals.DEFAULT_TIMEOUT).until(ExpectedConditions.elementToBeClickable(by));
 			new Select(_so.driver.findElement(by)).selectByVisibleText(valueToBeSelected);
-			_so.extentTest.info("Successfully selected value '" + valueToBeSelected + "' from dropdown " + by.toString(), MYReporting.getScreenshot(_so.driver));
 		}
 		catch (TimeoutException | NoSuchElementException ex) {
 			_so.extentTest.error("Error occurred when trying to select '" + valueToBeSelected + "' from dropdown " + by.toString() + ", does this dropdown exist and does it contain the value to be selected?", MYReporting.getScreenshot(_so.driver));

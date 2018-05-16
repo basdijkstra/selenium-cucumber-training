@@ -26,7 +26,7 @@ public class MortgageOrientationApiSteps extends SharedObjects {
 	}
 
 	@Given("^(.*) is trying to finance a mortgage as a single applicant$")
-	public void is_trying_to_finance_a_mortgage_as_a_single_application(String applicantName) throws Throwable {
+	public void is_trying_to_finance_a_mortgage_as_a_single_applicant(String applicantName) throws Throwable {
 
 		OrientationFieldOperation ofo = new OrientationFieldOperation();
 		ofo.setFieldName("application");
@@ -34,7 +34,7 @@ public class MortgageOrientationApiSteps extends SharedObjects {
 		ofo.setTaskType("FIELDUPDATE");
 		ofo.setValue("Single");
 
-		given().
+		given().log().body().and().
 		    relaxedHTTPSValidation().
 		and().
 			contentType(ContentType.JSON).

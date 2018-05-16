@@ -11,16 +11,16 @@ public class MortgageOrientationFinancialSituationPage {
 	private SharedObjects _so;
 	private MYElements myElements;
 	
-	private By textLabelRetireWithInTenYearsYes = By.id("retirement_0");
-	private By textLabelRetireWithInTenYearsNo = By.id("retirement_1");
-	private By textLabelPartnerRetireWithInTenYearsYes = By.id("partnerRetirement_0");
-	private By textLabelPartnerRetireWithInTenYearsNo = By.id("partnerRetirement_1");
+	private By textLabelRetireWithInTenYearsYes = By.id("retirement0");
+	private By textLabelRetireWithInTenYearsNo = By.id("retirement1");
+	private By textLabelPartnerRetireWithInTenYearsYes = By.id("partnerRetirement0");
+	private By textLabelPartnerRetireWithInTenYearsNo = By.id("partnerRetirement1");
 	private By textFieldPartnerDateOfBirth = By.id("partnerBirthDate");
-	private By textLabelPartnerRetirementIncomeKnown = By.id("partnerKnowsRetirementIncome_0"); 
+	private By textLabelPartnerRetirementIncomeKnown = By.id("partnerKnowsRetirementIncome0");
 	private By textFieldPartnerRetirementIncome = By.id("partnerRetirementIncome");
 	private By textFieldCapital = By.id("capital");
-	private By textLabelFinancialCommitmentYes = By.id("financialCommitment_0");
-	private By textLabelFinancialCommitmentNo = By.id("financialCommitment_1");
+	private By textLabelFinancialCommitmentYes = By.id("financialCommitment0");
+	private By textLabelFinancialCommitmentNo = By.id("financialCommitment1");
 	private By textFieldMonthlyLoans = By.id("monthlyLoans");
 	private By textFieldMonthlyAlimony = By.id("monthlyAlimony");
 	private By textFieldStudentLoan = By.id("studentLoan");

@@ -30,7 +30,7 @@ public class SetupAndTeardownSteps extends SharedObjects {
 		_so.apiSessionId = UUID.randomUUID().toString();
 	}
 
-	@Before("@userinterface")
+	@Before
 	public void openBrowser() {
 				
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
@@ -39,8 +39,8 @@ public class SetupAndTeardownSteps extends SharedObjects {
 		_so.driver = new ChromeDriver();
 		_so.driver.manage().window().maximize();
 	}
-	
-	@After("@userinterface")
+
+	@After
 	public void closeBrowser() {
 				
 		_so.driver.close();

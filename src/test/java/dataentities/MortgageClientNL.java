@@ -2,7 +2,7 @@ package dataentities;
 
 public class MortgageClientNL {
 	
-	String dateOfBirth;
+	private String dateOfBirth;
 	String contractType, yearlyGrossIncome;
 	String requestAloneOrTogether, retiringSoon;
 	String retirementIncome;

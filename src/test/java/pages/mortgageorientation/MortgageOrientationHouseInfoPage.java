@@ -11,11 +11,11 @@ public class MortgageOrientationHouseInfoPage {
 	private SharedObjects _so;
 	private MYElements myElements;
 	
-	private By textLabelHouseTypeNew = By.id("houseType_0");
-	private By textLabelHouseTypeExisting = By.id("houseType_1");
+	private By textLabelHouseTypeNew = By.id("houseType0");
+	private By textLabelHouseTypeExisting = By.id("houseType1");
 	private By textFieldRenovationCost = By.id("houseExtraCost");
-	private By textLabelCurrentlyHomeOwnerYes = By.id("homeOwner_0");
-	private By textLabelCurrentlyHomeOwnerNo = By.id("homeOwner_1");
+	private By textLabelCurrentlyHomeOwnerYes = By.id("homeOwner0");
+	private By textLabelCurrentlyHomeOwnerNo = By.id("homeOwner1");
 	private By textFieldCurrentHouseSalePrice = By.id("oldHouseSalePrice");
 	private By textFieldCurrentMortgage = By.id("oldMortgage");
 	private By textFieldCurrentMortgageStartDate = By.id("oldMortgageStartDate");

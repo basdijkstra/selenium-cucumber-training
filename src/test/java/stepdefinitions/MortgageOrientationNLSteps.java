@@ -5,6 +5,7 @@ import globals.*;
 import helpers.MYAssert;
 import cucumber.api.java.en.*;
 import dataentities.MortgageClientNL;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class MortgageOrientationNLSteps extends SharedObjects {
 	
@@ -192,10 +193,5 @@ public class MortgageOrientationNLSteps extends SharedObjects {
 	public void see_that_they_are_eligible_for_a_mortgage(String applicantName, String partnerApplicantName) throws Throwable {
 		
 		myAssert.assertTrue(new MortgageOrientationResultPage(_so).mortgagePossibleTextIsVisibleJoint(), applicantName + " and " + partnerApplicantName + " are eligible for a mortgage under their current financial situation");
-	}
-
-	@Then("^he is able to select a fixed interest period$")
-	public void test() throws Throwable {
-
 	}
 }

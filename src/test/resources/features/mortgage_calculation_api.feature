@@ -4,7 +4,7 @@ Feature: Calculate mortgage estimate
 	I want to see a mortgage calculation estimate
 	So that I can potentially start the mortgage application process
 
-	@api
+	@ignore
 	Scenario: Mortgage orientation intermediary calculation based on income and house price
 		Given Bert is trying to finance a mortgage as a single applicant
 		And he has an employment type Vast dienstverband

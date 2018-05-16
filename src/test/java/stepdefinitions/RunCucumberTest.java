@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = "classpath:features",
 		plugin = {"pretty", "json:target/cucumber-json-report/cucumber-json-report.json"},
-		tags = {"~@ignore","@api"}
+		tags = {"~@ignore"}
 		)
 
 public class RunCucumberTest{
